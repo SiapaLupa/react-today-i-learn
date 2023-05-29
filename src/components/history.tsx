@@ -12,12 +12,14 @@ export default function History(): JSX.Element {
       {Array.from(itemsDate).map((date: string, index: number) => {
         return (
           <>
-            <h1 className="text-2xl leading-loose font-extrabold">{index === 0 ? "Today" : date}</h1>
+            <h1 className="text-2xl leading-loose font-extrabold">
+              {index === 0 ? "Today" : date}
+            </h1>
             <section className="w-full flex gap-4 flex-wrap">
               {items.reverse().map((item) => {
                 if (item.day === date)
                   return (
-                    <div className="max-w-md bg-slate-200 text-slate-900 p-4 shadow-xl shadow-slate-900 opacity-90 hover:opacity-50 transition-{opacity} duration-300">
+                    <div className="max-w-md bg-slate-200 text-slate-900 p-4 shadow-xl shadow-slate-900 opacity-90 hover:opacity-50 transition-{opacity} duration-300 rounded-lg">
                       <p>{item.title}</p>
                       <p>{item.description}</p>
                     </div>
